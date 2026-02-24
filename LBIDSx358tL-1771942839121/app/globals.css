@@ -1,5 +1,129 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Replace all styles with original HTML styles */
 :root {
   --bg: #000000;
   --text: #ffffff;
@@ -8,8 +132,8 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   cursor: crosshair;
 }
@@ -20,14 +144,15 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  /* Added smooth transition for page navigation */
   transition: opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
@@ -38,8 +163,8 @@ body::before {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  margin: 0px auto;
+  padding: 0px 20px;
 }
 
 nav {
@@ -75,7 +200,7 @@ nav {
 }
 
 .hero {
-  padding: 160px 0 100px;
+  padding: 160px 0px 100px;
 }
 
 .hero h1 {
@@ -94,7 +219,7 @@ nav {
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -115,7 +240,7 @@ nav {
 }
 
 .project-grid {
-  padding: 100px 0;
+  padding: 100px 0px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 40px;
@@ -132,13 +257,13 @@ nav {
 @keyframes reveal {
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0px);
   }
 }
 
 .card-1 {
   grid-column: 1 / span 7;
-  margin-top: 0;
+  margin-top: 0px;
   animation-delay: 0.2s;
 }
 
@@ -199,7 +324,7 @@ nav {
 }
 
 .services {
-  padding: 100px 0;
+  padding: 100px 0px;
   border-top: 1px solid var(--accent);
 }
 
@@ -207,10 +332,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 0;
+  padding: 60px 0px;
   border-bottom: 1px solid var(--accent);
   transition: padding 0.4s var(--transition);
-  cursor: pointer;
 }
 
 .service-row:hover {
@@ -230,7 +354,7 @@ nav {
 }
 
 footer {
-  padding: 120px 0 60px;
+  padding: 120px 0px 60px;
   background: rgb(0, 0, 0);
 }
 
@@ -246,7 +370,6 @@ footer {
   letter-spacing: -0.05em;
   margin-bottom: 40px;
   transition: color 0.3s;
-  cursor: pointer;
 }
 
 .cta h2:hover {
@@ -265,22 +388,147 @@ footer {
   letter-spacing: 2px;
 }
 
-.footer-bottom a {
-  color: rgb(68, 68, 68);
-  text-decoration: none;
-  transition: color 0.3s;
+.stagger-1 {
+  animation-delay: 0.1s;
 }
 
-.footer-bottom a:hover {
-  color: #ffffff;
+.stagger-2 {
+  animation-delay: 0.2s;
 }
 
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
+.stagger-3 {
+  animation-delay: 0.3s;
+}
 
-/* ── Page Loader ── */
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+/* Adding mobile responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0px 16px;
+  }
+
+  nav {
+    height: 80px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .hero {
+    padding: 100px 0px 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 15vw, 80px);
+    margin-bottom: 40px;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta p {
+    grid-column: 1;
+    font-size: 16px;
+  }
+
+  .project-grid {
+    padding: 60px 0px;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3,
+  .card-4 {
+    grid-column: 1;
+    margin-top: 0px !important;
+  }
+
+  .project-info h3 {
+    font-size: 24px;
+  }
+
+  .project-info p {
+    font-size: 12px;
+  }
+
+  .services {
+    padding: 60px 0px;
+  }
+
+  .service-row {
+    padding: 30px 0px;
+  }
+
+  .service-row:hover {
+    padding-left: 20px;
+  }
+
+  .service-row h2 {
+    font-size: 32px;
+  }
+
+  .service-num {
+    font-size: 12px;
+  }
+
+  footer {
+    padding: 80px 0px 40px;
+  }
+
+  .cta {
+    padding-bottom: 60px;
+  }
+
+  .cta h2 {
+    font-size: 48px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 60px);
+  }
+
+  .service-row h2 {
+    font-size: 24px;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+  }
+}
+
+/* Replaced liquid loader with professional brutalist geometric loader */
 .page-loader {
   position: fixed;
   top: 0;
@@ -302,6 +550,7 @@ footer {
   }
 }
 
+/* Adding page transition loader that appears during navigation */
 .page-transition-loader {
   position: fixed;
   top: 0;
@@ -317,8 +566,13 @@ footer {
 }
 
 @keyframes transitionFadeOut {
-  0%   { opacity: 1; }
-  100% { opacity: 0; pointer-events: none; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 .loader-content {
@@ -329,6 +583,7 @@ footer {
   gap: 40px;
 }
 
+/* Sharp rotating square with reveal animation */
 .loader-square {
   position: relative;
   width: 80px;
@@ -350,14 +605,25 @@ footer {
 }
 
 @keyframes squareRotate {
-  0%, 100% { transform: rotate(0deg); }
-  50%       { transform: rotate(180deg); }
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
 }
 
 @keyframes squareFill {
-  0%   { transform: scaleY(0); }
-  50%  { transform: scaleY(1); }
-  100% { transform: scaleY(0); }
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
 }
 
 .loader-text-professional {
@@ -376,9 +642,16 @@ footer {
 }
 
 @keyframes textGlitch {
-  0%, 100% { text-shadow:  2px  2px 0 #ffffff; }
-  33%       { text-shadow: -2px -2px 0 #ffffff; }
-  66%       { text-shadow:  2px -2px 0 #ffffff; }
+  0%,
+  100% {
+    text-shadow: 2px 2px 0px #ffffff;
+  }
+  33% {
+    text-shadow: -2px -2px 0px #ffffff;
+  }
+  66% {
+    text-shadow: 2px -2px 0px #ffffff;
+  }
 }
 
 .loader-progress {
@@ -391,7 +664,26 @@ footer {
   text-align: center;
 }
 
-/* ── Navigation Loader ── */
+/* Mobile responsive loader */
+@media (max-width: 768px) {
+  .loader-square {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
+  }
+
+  .loader-void {
+    font-size: 36px;
+    letter-spacing: 6px;
+  }
+
+  .loader-progress {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+}
+
+/* Adding navigation loader for fast page transitions */
 .navigation-loader {
   position: fixed;
   top: 0;
@@ -410,7 +702,9 @@ footer {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* ── Service Modal ── */
+/* End navigation loader styles */
+
+/* Modal styles matching brutalist aesthetic */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -429,8 +723,12 @@ footer {
 }
 
 @keyframes modalOverlayFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modal-content {
@@ -445,8 +743,14 @@ footer {
 }
 
 @keyframes modalSlideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .modal-close {
@@ -531,6 +835,7 @@ footer {
   line-height: 1.8;
   color: #ffffff;
   margin-bottom: 12px;
+  padding-left: 0;
 }
 
 .detail-marker {
@@ -581,78 +886,80 @@ footer {
   border: 2px solid #ffffff;
 }
 
-/* ── Mobile Responsive ── */
+/* Mobile responsive modal styles */
 @media (max-width: 768px) {
-  .container { padding: 0 16px; }
-
-  nav { height: 80px; }
-  .logo { font-size: 20px; }
-  .nav-links { gap: 20px; }
-  .nav-links a { font-size: 12px; letter-spacing: 1px; }
-
-  .hero { padding: 100px 0 60px; }
-  .hero h1 { font-size: clamp(48px, 15vw, 80px); margin-bottom: 40px; }
-  .hero-meta { grid-template-columns: 1fr; }
-  .hero-meta p { grid-column: 1; font-size: 16px; }
-
-  .project-grid {
-    padding: 60px 0;
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .card-1, .card-2, .card-3, .card-4 {
-    grid-column: 1;
-    margin-top: 0 !important;
-  }
-
-  .project-info h3 { font-size: 24px; }
-  .project-info p  { font-size: 12px; }
-
-  .services { padding: 60px 0; }
-  .service-row { padding: 30px 0; }
-  .service-row:hover { padding-left: 20px; }
-  .service-row h2 { font-size: 32px; }
-  .service-num { font-size: 12px; }
-
-  footer { padding: 80px 0 40px; }
-  .cta { padding-bottom: 60px; }
-  .cta h2 { font-size: 48px; }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    font-size: 10px;
-  }
-
   .modal-content {
     padding: 40px 30px;
     max-height: 90vh;
     overflow-y: auto;
   }
-  .modal-close      { top: 20px; right: 20px; font-size: 28px; width: 36px; height: 36px; }
-  .modal-header     { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 30px; padding-bottom: 20px; }
-  .modal-number     { font-size: 14px; }
-  .modal-title      { font-size: 36px; }
-  .modal-description{ font-size: 16px; margin-bottom: 30px; }
-  .modal-details h3 { font-size: 12px; letter-spacing: 2px; margin-bottom: 16px; }
-  .modal-details li { font-size: 14px; margin-bottom: 10px; }
-  .modal-footer     { padding-top: 30px; }
-  .modal-cta        { padding: 20px 30px; font-size: 14px; letter-spacing: 1.5px; }
 
-  .loader-square  { width: 60px; height: 60px; border: 2px solid #ffffff; }
-  .loader-void    { font-size: 36px; letter-spacing: 6px; }
-  .loader-progress{ font-size: 12px; letter-spacing: 3px; }
+  .modal-close {
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .modal-number {
+    font-size: 14px;
+  }
+
+  .modal-title {
+    font-size: 36px;
+  }
+
+  .modal-description {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .modal-details h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .modal-details li {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .modal-footer {
+    padding-top: 30px;
+  }
+
+  .modal-cta {
+    padding: 20px 30px;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
 }
 
 @media (max-width: 480px) {
-  .nav-links     { gap: 16px; }
-  .nav-links a   { font-size: 10px; }
-  .hero h1       { font-size: clamp(40px, 12vw, 60px); }
-  .service-row h2{ font-size: 24px; }
-  .cta h2        { font-size: 36px; }
-  .modal-content { padding: 30px 20px; }
-  .modal-title   { font-size: 28px; }
-  .modal-description { font-size: 15px; }
-  .modal-cta     { padding: 18px 24px; font-size: 12px; }
+  .modal-content {
+    padding: 30px 20px;
+  }
+
+  .modal-title {
+    font-size: 28px;
+  }
+
+  .modal-description {
+    font-size: 15px;
+  }
+
+  .modal-cta {
+    padding: 18px 24px;
+    font-size: 12px;
+  }
 }

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import PageLoader from "@/components/PageLoader";
+import NavigationLoader from "@/components/NavigationLoader";
+import PageTransition from "@/components/PageTransition";
+import ScrollAnimations from "@/components/ScrollAnimations";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,7 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        <PageLoader />
+        <NavigationLoader />
+        <PageTransition />
+        {children}
+        <ScrollAnimations />
+      </body>
     </html>
   );
 }
