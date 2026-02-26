@@ -753,6 +753,12 @@ footer {
   color: #ffffff;
 }
 
+.back-link:focus-visible {
+  color: #ffffff;
+  outline: 1px solid #555555;
+  outline-offset: 4px;
+}
+
 /* ── Mobile Responsive ── */
 @media (max-width: 768px) {
   .container { padding: 0 16px; }

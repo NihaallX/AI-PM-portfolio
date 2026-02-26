@@ -52,12 +52,11 @@ export default function PostAIHealthcareIVR() {
 
         {/* Lessons */}
         <div className="post-section">
-          <p className="post-section-label">Key Product Lessons</p>
+          <h2 className="post-section-label">Key Product Lessons</h2>
 
           <div className="post-lesson">
             <div className="post-lesson-num">01</div>
-            <h3>Trust &gt; Intelligence</h3>
-            <p>Users judge the system in the first 5 seconds.</p>
+            <h3>Trust &gt; Intelligence</h3>            <p>Users judge the system in the first 5 seconds.</p>
             <p>
               If the tone feels robotic or overly scripted, they disengage.
               Conversational warmth matters more than model sophistication.

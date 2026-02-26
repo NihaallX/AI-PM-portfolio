@@ -22,8 +22,8 @@ export default function Studio() {
         </h1>
         <div className="hero-meta">
           <p>
-            Product-oriented AI builder focused on decision-making under constraints. I design and ship AI-driven
-            products with clear problem definition and deliberate tradeoffs.
+            I build AI systems that operate under real-world constraints.
+            My work sits at the intersection of LLM orchestration, system reliability, and user behavior.
           </p>
         </div>
       </section>
@@ -38,12 +38,41 @@ export default function Studio() {
             </h2>
           </div>
           <div style={{ gridColumn: "7 / span 6" }}>
-            <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#888888" }}>
-              Product-oriented AI builder with hands-on experience defining, shipping, and iterating on
-              production AI systems used by real users. Experienced in scoping MVPs under cost and latency
-              constraints, translating ambiguous operational problems into structured product requirements,
-              and balancing speed, reliability, and business impact across cross-functional teams.
+            <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#888888", marginBottom: "24px" }}>
+              I design and deploy GenAI systems using structured prompt engineering, retrieval pipelines,
+              and multi-step reasoning workflows that connect speech, context, and action.
             </p>
+            <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#888888", marginBottom: "24px" }}>
+              Model capability is only one part of the system.
+              The real challenge is defining <em style={{ color: "#cccccc", fontStyle: "normal" }}>when</em> the model should act,
+              <em style={{ color: "#cccccc", fontStyle: "normal" }}> how</em> it should reason,
+              and <em style={{ color: "#cccccc", fontStyle: "normal" }}>how</em> it should fail safely.
+            </p>
+            <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#888888" }}>
+              I don&apos;t treat AI as a feature layer. I treat it as a decision system that must be scoped, controlled, and evaluated.
+            </p>
+          </div>
+        </div>
+
+        {/* Approach */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(12, 1fr)", gap: "40px", marginBottom: "100px" }}>
+          <div style={{ gridColumn: "1 / span 5" }}>
+            <h2 style={{ fontSize: "48px", fontWeight: 900, marginBottom: "20px", textTransform: "uppercase" }}>
+              Approach
+            </h2>
+          </div>
+          <div style={{ gridColumn: "7 / span 6" }}>
+            {[
+              { label: "Discovery", value: "Translate ambiguous operational problems into structured product requirements." },
+              { label: "Specification", value: "Define LLM flows, retrieval logic, fallback paths, and edge-case handling before deployment." },
+              { label: "Evaluation", value: "Measure across latency thresholds, completion reliability, failure mode frequency, and manual intervention rate." },
+              { label: "Iteration", value: "Refine prompts, context windows, and orchestration layers based on observed behavior — not intuition." },
+            ].map(({ label, value }) => (
+              <div key={label} style={{ marginBottom: "32px", paddingBottom: "32px", borderBottom: "1px solid #111111" }}>
+                <p style={{ fontSize: "11px", color: "#555555", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "10px" }}>{label}</p>
+                <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#888888" }}>{value}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -59,7 +88,7 @@ export default function Studio() {
               <h3 style={{ fontSize: "24px", fontWeight: 900, marginBottom: "6px" }}>
                 AI Intern – <a href="https://chatmaven.ai" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>ChatMaven.ai ↗</a>
               </h3>
-              <p style={{ fontSize: "13px", color: "#666666", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "20px" }}>
+              <p style={{ fontSize: "12px", color: "#666666", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "20px" }}>
                 Jun 2025 – Nov 2025
               </p>
             </div>
@@ -90,7 +119,7 @@ export default function Studio() {
             <h3 style={{ fontSize: "24px", fontWeight: 900, marginBottom: "6px" }}>
               <a href="https://www.vupune.ac.in" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>Vishwakarma University ↗</a>, Pune
             </h3>
-            <p style={{ fontSize: "13px", color: "#666666", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>
+            <p style={{ fontSize: "12px", color: "#666666", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>
               B.Tech Computer Science — AI/ML Specialization · Aug 2023 – May 2027
             </p>
           </div>
@@ -115,7 +144,7 @@ export default function Studio() {
                   "Behavioral Product Design for AI Systems",
                   "Experimentation & Outcome Tracking",
                 ].map((item) => (
-                  <li key={item} style={{ display: "flex", gap: "12px", fontSize: "15px", lineHeight: "1.8", color: "#cccccc", paddingBottom: "8px", borderBottom: "1px solid #111111", marginBottom: "8px" }}>
+                  <li key={item} style={{ display: "flex", gap: "12px", fontSize: "16px", lineHeight: "1.8", color: "#cccccc", paddingBottom: "8px", borderBottom: "1px solid #111111", marginBottom: "8px" }}>
                     <span style={{ color: "#444444", fontWeight: 700, flexShrink: 0 }}>+</span>
                     {item}
                   </li>
@@ -130,7 +159,7 @@ export default function Studio() {
             ].map(({ label, value }) => (
               <div key={label} style={{ marginBottom: "28px" }}>
                 <p style={{ fontSize: "12px", color: "#666666", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "8px" }}>{label}</p>
-                <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#cccccc" }}>{value}</p>
+                <p style={{ fontSize: "16px", lineHeight: "1.7", color: "#cccccc" }}>{value}</p>
               </div>
             ))}
           </div>
