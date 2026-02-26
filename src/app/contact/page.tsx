@@ -1,8 +1,33 @@
 "use client"
 
 import Link from "next/link"
+import { useState } from "react"
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle")
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setStatus("sending")
+    const form = e.currentTarget
+    const data = new FormData(form)
+    try {
+      const res = await fetch("https://formspree.io/f/xojnrydd", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      })
+      if (res.ok) {
+        setStatus("sent")
+        form.reset()
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
+  }
+
   return (
     <div className="container">
       <nav>
@@ -11,7 +36,7 @@ export default function Contact() {
           <Link href="/">Home</Link>
           <Link href="/works">Works</Link>
           <Link href="/studio">About</Link>
-          <Link href="/journal">Journal</Link>
+          <Link href="/journal">Essays</Link>
           <Link href="/contact">Contact</Link>
         </div>
       </nav>
@@ -95,7 +120,7 @@ export default function Contact() {
           <div style={{ gridColumn: "7 / span 6" }}>
             <form
               style={{ display: "flex", flexDirection: "column", gap: "30px" }}
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div>
                 <label
@@ -105,6 +130,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid var(--accent)", color: "#ffffff", fontSize: "18px", padding: "10px 0", outline: "none" }}
                 />
@@ -118,6 +144,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid var(--accent)", color: "#ffffff", fontSize: "18px", padding: "10px 0", outline: "none" }}
                 />
@@ -130,17 +157,30 @@ export default function Contact() {
                   Message *
                 </label>
                 <textarea
+                  name="message"
                   required
                   rows={6}
                   style={{ width: "100%", background: "transparent", border: "none", borderBottom: "1px solid var(--accent)", color: "#ffffff", fontSize: "18px", padding: "10px 0", outline: "none", resize: "vertical" }}
                 />
               </div>
 
+              {status === "sent" && (
+                <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#ffffff" }}>
+                  Message sent — I&apos;ll get back to you soon.
+                </p>
+              )}
+              {status === "error" && (
+                <p style={{ fontSize: "13px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#888888" }}>
+                  Something went wrong. Try emailing directly.
+                </p>
+              )}
+
               <button
                 type="submit"
-                style={{ alignSelf: "flex-start", background: "#ffffff", color: "#000000", border: "none", padding: "20px 60px", fontSize: "14px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "2px", cursor: "pointer", transition: "all 0.3s" }}
+                disabled={status === "sending" || status === "sent"}
+                style={{ alignSelf: "flex-start", background: "#ffffff", color: "#000000", border: "none", padding: "20px 60px", fontSize: "14px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "2px", cursor: status === "sending" ? "wait" : "pointer", transition: "all 0.3s", opacity: status === "sent" ? 0.4 : 1 }}
               >
-                Send Message
+                {status === "sending" ? "Sending..." : status === "sent" ? "Sent" : "Send Message"}
               </button>
             </form>
           </div>

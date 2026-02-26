@@ -94,7 +94,7 @@ export default function Home() {
           <div className="nav-links">
             <Link href="/works">Works</Link>
             <Link href="/studio">About</Link>
-            <Link href="/journal">Journal</Link>
+            <Link href="/journal">Essays</Link>
             <Link href="/contact">Contact</Link>
           </div>
         </nav>
@@ -190,6 +190,7 @@ export default function Home() {
         </section>
 
         <footer>
+          <Link href="/contact" style={{ textDecoration: "none", color: "inherit" }}>
           <div className="cta">
             <h2>
               HIRE
@@ -197,6 +198,7 @@ export default function Home() {
               ME
             </h2>
           </div>
+          </Link>
           <div className="footer-bottom">
             <div>Nihal Pardeshi © 2026</div>
             <div>Pune / Remote</div>

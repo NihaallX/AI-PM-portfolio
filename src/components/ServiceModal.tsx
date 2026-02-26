@@ -57,7 +57,7 @@ export default function ServiceModal({ isOpen, onClose, service }: ServiceModalP
             <ul>
               {service.details.map((detail, index) => (
                 <li key={index}>
-                  <span className="detail-marker">—</span>
+                  <span className="detail-marker">+</span>
                   {detail}
                 </li>
               ))}
