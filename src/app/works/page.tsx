@@ -88,22 +88,22 @@ export default function Works() {
         </div>
 
         <div className="project-card card-4">
-          <a href="https://www.datehelp.tech/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+          <Link href="/works/evara" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
             <div className="img-wrapper">
               <img
-                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200"
-                alt="datehelp"
+                src="https://images.unsplash.com/photo-1687875496747-60dfbc703570?auto=format&fit=crop&q=80&w=1200"
+                alt="Evara — Menopause Wellness Companion"
               />
             </div>
             <div className="project-info">
-              <h3>datehelp ↗</h3>
-              <p>AI / Consumer / Gen Z / 2025</p>
+              <h3>Evara ↗</h3>
+              <p>Product Concept / Health / Women&apos;s Wellness / 2026</p>
               <p style={{ fontSize: "14px", color: "#555555", lineHeight: "1.7", marginTop: "12px" }}>
-                AI-powered dating profile roast and optimization tool for Gen Z. Photo ranking,
-                bio rewriting, and glow-up suggestions driven by LLM analysis.
+                AI-powered menopause wellness companion. Personalized symptom tracking,
+                behavioral nudges, and contextual support designed around women&apos;s lived experience.
               </p>
             </div>
-          </a>
+          </Link>
         </div>
 
         <div className="project-card card-1">
@@ -126,19 +126,19 @@ export default function Works() {
         </div>
 
         <div className="project-card card-2">
-          <a href="https://moodifyxd.vercel.app/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+          <a href="https://www.datehelp.tech/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
             <div className="img-wrapper" style={{ aspectRatio: "3/4" }}>
               <img
-                src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=800"
-                alt="moodify"
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+                alt="datehelp"
               />
             </div>
             <div className="project-info">
-              <h3>moodify ↗</h3>
-              <p>AI / Music / Emotion / 2025</p>
+              <h3>datehelp ↗</h3>
+              <p>AI / Consumer / Gen Z / 2025</p>
               <p style={{ fontSize: "14px", color: "#555555", lineHeight: "1.7", marginTop: "12px" }}>
-                AI-powered mood-based music recommendation with Spotify integration and
-                real-time emotion detection. Personalized playlists from your current state of mind.
+                AI-powered dating profile roast and optimization tool for Gen Z. Photo ranking,
+                bio rewriting, and glow-up suggestions driven by LLM analysis.
               </p>
             </div>
           </a>
