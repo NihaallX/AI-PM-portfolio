@@ -69,19 +69,19 @@ export default function Works() {
         </div>
 
         <div className="project-card card-3">
-          <a href="https://github.com/NihaallX/Intern-stellar" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+          <a href="https://github.com/NihaallX/Application-where" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
             <div className="img-wrapper" style={{ aspectRatio: "1/1" }}>
               <img
-                src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
-                alt="Intern-stellar"
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                alt="Application Where — Job Search CRM"
               />
             </div>
             <div className="project-info">
-              <h3>Intern-stellar ↗</h3>
-              <p>AI / Job Discovery / 2026</p>
+              <h3>Application Where ↗</h3>
+              <p>AI / Job Search CRM / Automation / 2026</p>
               <p style={{ fontSize: "14px", color: "#555555", lineHeight: "1.7", marginTop: "12px" }}>
-                AI-powered job discovery system that scrapes, scores, and emails relevant AI engineering
-                roles. Automated end-to-end pipeline from discovery to delivery.
+                Automated job search CRM that scans Gmail with LLM classification, tracks every
+                application status across 7 categories, and surfaces a live analytics dashboard — zero manual input.
               </p>
             </div>
           </a>

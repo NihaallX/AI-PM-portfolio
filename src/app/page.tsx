@@ -147,10 +147,11 @@ export default function Home() {
           </div>
 
           <div className="project-card card-3">
-            <div className="img-wrapper" style={{ aspectRatio: "1/1" }}>
+            <div className="img-wrapper" style={{ aspectRatio: "1/1", background: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800"
-                alt="ChatMaven.ai"
+                src="https://cm-kb-us.s3.us-east-2.amazonaws.com/p_images/dashboardwidget/94708651-9be3-43f0-92f8-56a21613533f.png"
+                alt="ChatMaven.ai logo"
+                style={{ objectFit: "contain", width: "60%", height: "60%" }}
               />
             </div>
             <div className="project-info">
