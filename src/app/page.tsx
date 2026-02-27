@@ -117,10 +117,29 @@ export default function Home() {
 
         <section className="project-grid">
           <div className="project-card card-1">
-            <a href="https://www.relayx.tech/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-              <div className="img-wrapper">
+            <div style={{ display: "block", position: "relative" }}>
+              <div className="img-wrapper" style={{ background: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <img
-                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200"
+                  src="https://cm-kb-us.s3.us-east-2.amazonaws.com/p_images/dashboardwidget/94708651-9be3-43f0-92f8-56a21613533f.png"
+                  alt="ChatMaven.ai logo"
+                  style={{ objectFit: "contain", width: "40%", height: "40%" }}
+                />
+              </div>
+              <div className="project-info">
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "4px" }}>
+                  <h3 style={{ margin: 0 }}>ChatMaven.ai</h3>
+                  <span style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em", border: "1px solid #ffffff", padding: "2px 8px", textTransform: "uppercase" }}>Internship</span>
+                </div>
+                <p>AI Intern / Healthcare IVR / Voice AI</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="project-card card-2">
+            <a href="https://www.relayx.tech/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
+              <div className="img-wrapper" style={{ aspectRatio: "3/4" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
                   alt="RelayX – AI Voice Calling Platform"
                 />
               </div>
@@ -131,9 +150,9 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="project-card card-2">
+          <div className="project-card card-3">
             <a href="https://ratemyprof.me/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
-              <div className="img-wrapper" style={{ aspectRatio: "3/4" }}>
+              <div className="img-wrapper" style={{ aspectRatio: "1/1" }}>
                 <img
                   src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=800"
                   alt="RateMyProf India"
@@ -146,20 +165,6 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="project-card card-3">
-            <div className="img-wrapper" style={{ aspectRatio: "1/1", background: "#111", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img
-                src="https://cm-kb-us.s3.us-east-2.amazonaws.com/p_images/dashboardwidget/94708651-9be3-43f0-92f8-56a21613533f.png"
-                alt="ChatMaven.ai logo"
-                style={{ objectFit: "contain", width: "60%", height: "60%" }}
-              />
-            </div>
-            <div className="project-info">
-              <h3>ChatMaven.ai</h3>
-              <p>Healthcare IVR / AI Internship</p>
-            </div>
-          </div>
-
           <div className="project-card card-4">
             <a href="https://www.datehelp.tech/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit", display: "block" }}>
               <div className="img-wrapper">
@@ -169,7 +174,7 @@ export default function Home() {
                 />
               </div>
               <div className="project-info">
-                <h3>datehelp</h3>
+                <h3>datehelp ↗</h3>
                 <p>AI / Consumer / Gen Z</p>
               </div>
             </a>
